@@ -31,6 +31,8 @@ namespace HalfProductionTime
         // Token: 0x06000005 RID: 5 RVA: 0x0000217C File Offset: 0x0000037C
         private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
         {
+            if (arg0.name != "Island" || onSceneLoadedDone) return;
+            onSceneLoadedDone = true;
             if (arg0.name == "Island")
             {
                 foreach (Recipe recipe in GameResources.Instance.Recipes)
